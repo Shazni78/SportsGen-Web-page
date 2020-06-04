@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "montserrat", sans-serif;
+			}
+			.landing-page{
+				width: 100%;
+				height: 100vh;
+				background: #000;
+				position: relative;
+				overflow: hidden;
+			}
+			.landing-page::after{
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: url(images/fancy.jpg) no-repeat;
+				background-position: center;
+				background-size: cover;
+				opacity: .3;
+				animation: anim 25s linear infinite;
+			}
+			@keyframes anim {
+				50% {
+					transform: scale(2);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+			.page-content{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				width: 100%;
+				max-width: 800px;
+				text-align: center;
+				padding: 0 40px;
+				box-sizing: content-box;
+			}
+			.page-content h1{
+				color: #ffffff;
+				/*text-transform: uppercase;*/
+				font-size: 50px;
+				font-weight: 900;
+				margin-bottom: 20px;
+			}
+			.page-content h2{
+				color: #ffffff;
+				text-transform: uppercase;
+				font-size: 30px;
+				font-weight: 900;
+				margin-bottom: 20px;
+			}
+			.page-content h3{
+				color: #ffffff;
+				text-transform: uppercase;
+				font-size: 20px;
+				font-weight: 900;
+				margin-bottom: 20px;
+			}
+			.page-content p{
+				color: #fff;
+				margin-bottom: 20px;
+			}
+			.page-content p1{
+				display: inline-block;
+				text-decoration: none;
+				color: #ffffff;
+				border: 2px solid #ffffff;
+				text-transform: uppercase;
+				padding: 10px 20px;
+				transition: 0.4s linear;
+			}
+			.page-content p1:hover{
+				color: #000000;
+				background: #ffffff;
+			}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript">
+			setTimeout("location.href = 'Main Page.html';",6000);
+		</script>
+	</head>
+	<body>
+		<div class="landing-page">
+			<div class="page-content">
+				<h1>SportsGen</h1>
+				<h3>( Never loose your track )</h3>
+				<h2>Team Members</h2>
+				<p>
+					MOWLANA<br>
+					HARITH<br>
+					BANUKA<br>
+					SHAZNI
+				</p>
+				<p1> Welcome </p1>
+			</div>
+		</div>
+	</body>
+</html>

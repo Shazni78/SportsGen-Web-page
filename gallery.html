@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+
+<body class="main-content" id="mainBody">
+
+	<header>
+        <div class="logo">
+            <img src="image/logo.png" style="height:60px;" alt="logo">
+			SportsGen
+        </div>
+        <div class="moto">
+            <h1>NEVER LOSE YOUR TRACK</h1>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+
+
+    <div class="topnav">
+        <a href="Main Page.html">HOME</a>
+        <a class="active" href="gallery.html">GALLERY</a>
+        <a href="NewStore.html">STORE</a>
+        <a href="GroupMemers.html">ABOUT US</a>
+        <a href="quiz.html">FAQ</a>
+		<a href="sitemap.html">SITE MAP</a>
+        <div class="search-box">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><img src="image/search.png" alt="search" style="height:15px;"></button>
+            </form>
+        </div>
+    </div>
+    <div class="overlay-content">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" class="main-img">
+        <p id="imgtext" class="main-img-text"></p>
+    </div>
+
+    <div class="gallery-content">
+        <div class="row">
+            <label>Choose a background color : </label>
+            <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked onclick="changeBackgroundColor('#FDFEFE  ');">
+            <label for="radio-one">White</label>
+            <input type="radio" name="demo" value="two" id="radio-one" class="form-radio" onclick="changeBackgroundColor('#000000');">
+            <label for="radio-one">Black</label>
+            <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked onclick="changeBackgroundColor('#A3E4D7');">
+            <label for="radio-one">Green</label>
+            <input type="radio" name="demo" value="two" id="radio-one" class="form-radio" onclick="changeBackgroundColor('#F9E79F');">
+            <label for="radio-one">Yellow</label>
+            <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked onclick="changeBackgroundColor('#EBDEF0  ');">
+            <label for="radio-one">Purple</label>
+        </div>
+
+        <div class="row">
+            <label>Choose a font color : </label>
+            <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked onclick="changeFontColor('#FDFEFE  ');">
+            <label for="radio-one">White</label>
+            <input type="radio" name="demo" value="two" id="radio-one" class="form-radio" onclick="changeFontColor('#000000');">
+            <label for="radio-one">Black</label>
+            <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked onclick="changeFontColor('#117A65  ');">
+            <label for="radio-one">Green</label>
+            <input type="radio" name="demo" value="two" id="radio-one" class="form-radio" onclick="changeFontColor('#F1C40F  ');">
+            <label for="radio-one">Yellow</label>
+            <input type="radio" name="demo" value="two" id="radio-one" class="form-radio" onclick="changeFontColor('#7D3C98');">
+            <label for="radio-one">Purple</label>
+        </div>
+        <br><br>
+
+
+        <div class="row">
+            <h1>
+                <center>Photo Gallery</center>
+            </h1><br></br>
+            <p>
+                <h2>
+                    <center>“When you lose a couple of times, it makes you realize how difficult it is to win.”</center>
+                </h2>
+            </p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Swimming</center>
+                            <h3>
+                    </p>
+                    <img src="image/swimming.jpg" alt="Swimming is an individual or team sport that requires the use of one's entire body to move through water. The sport takes place in pools or open water (e.g., in a sea or lake). Competitive swimming is one of the most popular Olympic sports, with varied distance events in butterfly, backstroke, breaststroke, freestyle, and individual medley. In addition to these individual events, four swimmers can take part in either a freestyle or medley relay. A medley relay consists of four swimmers who will each swim a different stroke, ordered as backstroke, breaststroke, butterfly and freestyle. Swimming each stroke requires a set of specific techniques; in competition, there are distinct regulations concerning the acceptable form for each individual stroke."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"No man drowns if he perseveres in praying to God, and can swim."</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Basketball</center>
+                            <h3>
+                    </p>
+                    <img src="image/basketball.jpg" alt="Basketball is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately 9.4 inches (24 cm) in diameter) through the defender's hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three. After a foul, timed play stops and the player fouled or designated to shoot a technical foul is given one or more one-point free throws."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"7 days without shooting hoops makes one weak."</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Chess</center>
+                            <h3>
+                    </p>
+                    <img src="image/chess.jpg" alt="Chess is a two-player strategy board game played on a checkered board with 64 squares arranged in an 8×8 grid.The game is played by millions of people worldwide. Chess is believed to be derived from the Indian game chaturanga sometime before the 7th century. Chaturanga is also the likely ancestor of the Eastern strategy games xiangqi, janggi, and shogi. Chess reached Europe by the 9th century, due to the Umayyad conquest of Hispania. The pieces assumed their current powers in Spain in the late 15th century; the modern rules were standardized in the 19th century"
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"Every chess master was once a beginner."</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Hockey</center>
+                            <h3>
+                    </p>
+                    <img src="image/hockey.jpg" alt="Ice hockey is a contact team sport played on ice, usually in a rink, in which two teams of skaters use their sticks to shoot a vulcanized rubber puck into their opponent's net to score points. The sport is known to be fast-paced and physical, with teams usually consisting of six players each: one goaltender, and five players who skate up and down the ice trying to take the puck and score a goal against the opposing team"
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"Let your mistakes make you better, not bitter"</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Tennis</center>
+                            <h3>
+                    </p>
+                    <img src="image/tennis.jpg" alt="Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent's court. The object of the game is to maneuver the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"Life is like a game of tennis; the player who serves well seldom loses."</i></p>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Badminton</center>
+                            <h3>
+                    </p>
+                    <img src="image/badminton.jpg" alt="Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are singles (with one player per side) and doubles (with two players per side). Badminton is often played as a casual outdoor activity in a yard or on a beach; formal games are played on a rectangular indoor court. Points are scored by striking the shuttlecock with the racquet and landing it within the opposing side's half of the court."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>" Badminton is like ballet dancing. It requires a lot of control, strength, mind play and measured movement "</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Football</center>
+                            <h3>
+                    </p>
+                    <img src="image/football.jpg" alt="Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called football include association football (known as soccer in some countries); gridiron football (specifically American football or Canadian football); Australian rules football; rugby football (either rugby league or rugby union); and Gaelic football.These various forms of football are known as football codes"
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"Once you learn to quit, it becomes a habit .challenge is face to the game and be you"</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Rugby</center>
+                            <h3>
+                    </p>
+                    <img src="image/rugby.jpg" alt="Rugby is the world governing body for the sport of rugby union.World Rugby organises the Rugby World Cup every four years, the sport's most recognised and most profitable competition. It also organises a number of other international rugby competitions, such as the World Rugby Sevens Series, the Rugby World Cup Sevens, the World Under 20 Championship, and the Pacific Nations Cup."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"How we win the game shows something about our character; how we lose it shows all of it"</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Cricket</center>
+                            <h3>
+                    </p>
+                    <img src="image/cricket.jpg" alt="Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 20-metre (22-yard) pitch with a wicket at each end, each comprising two bails balanced on three stumps. The batting side scores runs by striking the ball bowled at the wicket with the bat, while the bowling and fielding side tries to prevent this and dismiss each player (so they are 'out'). Means of dismissal include being bowled, when the ball hits the stumps and dislodges the bails, and by the fielding side catching the ball after it is hit by the bat, but before it hits the ground. When ten players have been dismissed, the innings ends and the teams swap roles. The game is adjudicated by two umpires, aided by a third umpire and match referee in international matches."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5><i>"People throw stones at you and you convert them into milestones it is the best way to face"</i></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-img">
+                    <p>
+                        <h3>
+                            <center>Netball</center>
+                            <h3>
+                    </p>
+                    <img src="image/netball.jpg" alt="Netball is a ball sport played by two teams of seven players. Its development, derived from early versions of basketball, began in England in the 1890s. By 1960, international playing rules had been standardised for the game, and the International Federation of Netball and Women's Basketball (later renamed the International Netball Federation (INF)) was formed. As of 2019, the INF comprises more than 70 national teams organized into five global regions."
+                        onclick="viewImage(this);">
+                    <p>
+                        <h5>
+                            <i>"Never limit yourself. We don’t know what our bodies can do and what our minds can achieve."</i>
+                        </h5>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+    <footer>
+        <h5>About us :<a href="cv.html">Info</a> </h5>
+    </footer>
+    <script src="js/gallery.js"></script>
+</body>
+
+</html>

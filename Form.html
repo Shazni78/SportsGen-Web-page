@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- declaring a language is important for accessibility-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- control the page's dimensions and scaling-->
+    <title>Comment</title>
+    <link rel="stylesheet" href="css/form.css">
+	<style>
+		
+	</style>
+</head>
+
+<body class="main-content">
+
+    <form name="comment" onsubmit="required()">
+        <h1 style="text-align:center;"> Your feedback </h1>
+        <hr>
+        <h3 style="text-align:center;"> We would like your feedback to improve our website <br> Required fields are marked * </h3>
+        <br>
+        <div class="grid-container1">
+            <div class="item1">
+                <label>Name* :</label>
+                <input type="text" name="name" value="Name">
+            </div>
+            <div class="item2">
+                <label>Email :</label>
+                <input type="email" name="emailaddress" value="Email Address">
+            </div>
+            <div class="item3">
+                <label>Any comments :</label></p>
+                <textarea id="comments" cols="100" rows="3"> </textarea>
+            </div>
+        </div>
+        <hr>
+        <h3 style="text-align:center;"> What is your opinion of this page? <br> Rate us* </h3>
+        <div class="grid-container2">
+            <div class="item4">
+                <input type="radio" name="rate" id="bad" value="bad" />
+                <label for="bad"><img src="image/bad.png" alt="bad" /></label>
+            </div>
+            <div class="item5">
+                <input type="radio" name="rate" id="ok" value="ok" />
+                <label for="ok"><img src="image/ok.png" alt="ok" /></label>
+            </div>
+            <div class="item6">
+                <input type="radio" name="rate" id="good" value="good" />
+                <label for="good"><img src="image/good.png" alt="good" /></label>
+            </div>
+            <div class="item7">
+                <input type="radio" name="rate" id="great" value="great" />
+                <label for="great"><img src="image/great.png" alt="great" /></label>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function required() {
+            var name = document.forms["comment"].name.value;
+            var rating = document.forms["comment"].rate.value;
+            var comments = document.getElementById("comments").value;
+            if (name == "" || rating == "") {
+                alert("Please fill the required fields");
+                return false;
+            } else {
+                window.alert("Dear " + name + ", Thank you very much for your feedback. You have rated our site as " + rating + " and your comment was " + "'" + comments + "'");
+                return true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

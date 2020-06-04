@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Our Store</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="fontawesome-free-5.9.0-web/css/all.css">
+		<link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+			:root {
+				--primaryColor: #f09d51;
+				--mainWhite: #fff;
+				--mainBlack: #222;
+				--mainGrey: #ececec;
+				--mainSpacing: 0.1rem;
+				--mainTransition: all 0.3s linear;
+			}
+			*{
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				color: #222;
+				background: #fff;
+				font-family: "Lato", sans-serif;
+			}
+			.navbar{
+				background: var(--mainWhite);
+				position: sticky;
+				top: 0;
+				height: 60px;
+				width: 100;
+				display: flex;
+				align-items: center;
+				background: rgb(231,226,221);
+				z-index: 1;
+			}
+			.navbar-center{
+				width: 100%;
+				max-width: 1170px;
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 1.5rem;
+			}
+			.nav-icon{
+				font-size: 1.5rem;
+			}
+			.cart-btn{
+				position: relative;
+				cursor: pointer;
+			}
+			.cart-itemsNo{
+				position: absolute;
+				top: -8px;
+				right: -8px;
+				background: var(--primaryColor);
+				border-radius: 30%;
+				color: var(--mainWhite);
+			}
+			.btn-danger{
+				color: grey;
+				cursor: pointer;
+				background: transparent;
+				border: none;
+				float: right;
+			}
+			.main-header{
+				min-height: calc(100vh - 60px);
+				background: url("images/Background.jpg") center/cover no-repeat;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.banner{
+				text-align: center;
+				background: rgba(255, 255, 255, 0.8);
+				display: inline-block;
+				padding: 2rem;
+			}
+			.banner-title{
+				font-size: 3.4rem;
+				text-transform: uppercase;
+				letter-spacing: var(--mainSpacing);
+				margin-bottom: 3rem;
+			}
+			.banner-btn{
+				padding: 1rem 3rem;
+				text-transform: uppercase;
+				letter-spacing: var(--mainSpacing);
+				font-size: 1rem;
+				background: var(--primaryColor);
+				color: var(--mainBlack);
+				border: 1px solid var(--mainTransition);
+				cursor: pointer;
+			}
+			.banner-btn:hover {
+				background: transparent;
+				color: var(--primaryColor);
+			}
+			.section-title h2{
+				text-align: center;
+				font-size: 2.5rem;
+				margin-bottom: 5rem;
+				text-transform: capitalize;
+				letter-spacing: 0.1rem;
+			}
+			
+			.shop-item-image{
+				display: block;
+				width: 100%;
+				min-height: 12rem;
+				transition: all 0.3s linear;
+			}
+			.shop-items{
+				width: 90vw;
+				margin: 0 auto;
+				max-width: 1170px;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+				grid-column-gap: 1.5rem;
+				grid-row-gap: 2rem;
+			}
+			.content-section{
+				padding: 4rem 0;
+			}
+			
+			.cart{
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				overflow: scroll;
+				z-index: 3;
+				background: rgb(231, 226, 221);
+				padding: 1.5rem;
+				transition: var(--mainTransition);
+				transform: translateX(100%);
+			}
+			.cart1{
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				overflow: scroll;
+				z-index: 3;
+				background: rgb(231, 226, 221);
+				padding: 1.5rem;
+				transition: var(--mainTransition);
+				transform: translateX(0%);
+			}
+			.cart2{
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				overflow: scroll;
+				z-index: 3;
+				background: rgb(231, 226, 221);
+				padding: 1.5rem;
+				transition: var(--mainTransition);
+				transform: translateX(100%);
+			}
+			@media screen and (min-width: 768px){
+				.cart{
+					width: 30vw;
+					min-width: 450px;
+				}
+			}
+			.cart-items{
+				display: grid;
+				align-items: center;
+				grid-template-columns: auto 1fr auto;
+				grid-column-gap: 3.0rem;
+				margin: 1.5rem 0;
+			}
+			.cart-items img{
+				width: 95px;
+				height: 95px;
+			}
+			.cartButton{
+				background: transparent;
+				border: none;
+				font-size: 20px;
+			}
+			.IncreaseButton{
+				background: #000;
+				border: none;
+				font-size: 20px;
+			}
+			.DecreaseButton{
+				background: #000;
+				border: none;
+				font-size: 20px;
+			}
+			.cart-item-title{
+				font-size: 0.85rem;
+				text-transform: capitalize;
+				letter-spacing: var(--mainSpacing);
+				text-align: center;
+			}
+			.cart-items h4{
+				font-size: 0.85rem;
+				text-transform: capitalize;
+				letter-spacing: var(--mainSpacing);	
+				text-align: center;
+			}
+			.cart h2{
+				text-transform: capitalize;
+				text-align: center;
+				letter-spacing: var(--mainSpacing);
+				margin-bottom: 2rem;
+				text-transform: uppercase;
+			}
+			.cart-footer{
+				margin-top: 2rem;
+				letter-spacing: var(--mainSpacing);
+				text-align: center;
+			}
+			.cart-footer h3 {
+				text-transform: uppercase;
+				margin-bottom: 1rem;
+			}
+			.btn-purchase{
+				padding: 1rem 3rem;
+				text-transform: uppercase;
+				letter-spacing: var(--mainSpacing);
+				font-size: 1rem;
+				background: var(--primaryColor);
+				color: var(--mainBlack);
+				border: 1px solid var(--mainTransition);
+				cursor: pointer;
+			}
+			.btn-purchase:hover {
+				background: transparent;
+				color: var(--primaryColor);
+			}
+			.shop-item-title{
+				text-transform: capitalize;
+				font-size: 1.1rem;
+				margin-top: 1rem;
+				letter-spacing: var(--mainSpacing);
+				text-align: center;
+			}
+			.shop-item-price{
+				margin-top: 0.7rem;
+				letter-spacing: var(--mainSpacing);
+				color: var(--primaryColor);
+				text-align: center;
+			}
+			.img-container{
+				position: relative;
+				overflow: hidden;
+			}
+			.shop-item-button{
+				position: absolute;
+				top: 70%;
+				right: 0;
+				background: var(--primaryColor);
+				border: none;
+				text-transform: uppercase;
+				padding: 0.5rem 0.75rem;
+				letter-spacing: var(--mainSpacing);
+				font-weight: bold;
+				transition: var(--mainTransition);
+				transform: translateX(101%);
+				cursor: pointer;
+			}
+			.shop-item-button:hover {
+				color: var(--mainWhite);
+			}
+			.fa-shopping-cart {
+				margin-right: 0.5rem;
+			}
+			.img-container:hover .shop-item-button{
+				transform: translateX(0);
+			}
+			.cart-quantity-input{
+				background: transparent;
+				border: none;
+				width: 45px;
+			}
+			.cart-item-title{
+				font-size: 0.85rem;
+				text-transform: capitalize;
+				letter-spacing: var(--mainSpacing);
+			}
+		</style>
+		<script src="store.js" async></script>
+	</head>
+	<body>
+	
+	<header>
+        <div class="logo">
+            <img src="image/logo.png" style="height:60px;" alt="logo">
+			SportsGen
+        </div>
+        <div class="moto">
+            <h1>NEVER LOSE YOUR TRACK</h1>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+
+	
+		<div class="topnav">
+	        <a href="Main Page.html">HOME</a>
+	        <a href="gallery.html">GALLERY</a>
+	        <a class="active" href="NewStore.html">STORE</a>
+	        <a href="GroupMemers.html">ABOUT US</a>
+	        <a href="quiz.html">FAQ</a>
+			<a href="sitemap.html">SITE MAP</a>
+	        <div class="search-box">
+	            <form>
+	                <input type="text" placeholder="Search.." name="search">
+	                <button type="submit"><img src="image/search.png" alt="search" style="height:15px;"></button>
+	            </form>
+	        </div>
+   		</div>
+		<nav class="navbar">
+			<div class="navbar-center">
+				<img src="images/title1.png" alt="store logo">
+				<div class="cart-btn">
+					<button class="cartButton" type="button" onclick="displayCart();"><i class="fas fa-cart-plus"></i></button>
+					<button class="IncreaseButton" type="button"><a href="javascript:decreaseFontSize();">-</a></button> 
+					<button class="DecreaseButton" type="button"><a href="javascript:increaseFontSize();">+</a></button>	
+				</div>
+			</div>
+		</nav>
+		<header class="main-header">
+			<div class="banner">
+				<h1 class="banner-title">Sports equipment</h1>
+				<button class="banner-btn">Shop now</button>
+			</div>
+		</header>
+		<section class="container content-section">
+			<div class="section-title">
+				<h2 class="section-header">OUR PRODUCTS</h2>
+			</div>
+			<div class="shop-items">
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Cricket Bat.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">CRICKET BAT</h3>
+						<h4 class="shop-item-price">$52.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Leather Ball.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">LEATHER BALL</h3>
+						<h4 class="shop-item-price">$19.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Baseball Bat.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">BASEBALL BAT & BALL</h3>
+						<h4 class="shop-item-price">$69.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Baseball Bat1.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">BASEBALL BAT</h3>
+						<h4 class="shop-item-price">$49.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Baseball.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">BASEBALL</h3>
+						<h4 class="shop-item-price">$19.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Golf Shoes.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">GOLF SHOES</h3>
+						<h4 class="shop-item-price">$24.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Leather Ball1.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">WHITE LEATHER BALL</h3>
+						<h4 class="shop-item-price">$21.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Soccer Ball.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">SOCCER BALL</h3>
+						<h4 class="shop-item-price">$24.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Soccer gloves.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">SOCCER GLOVES</h3>
+						<h4 class="shop-item-price">$19.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Tennis Racket.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">TENNIS RACKET</h3>
+						<h4 class="shop-item-price">$34.99</h4>
+						
+					</div>
+				</div>
+				<div class="shop-item">
+					<div class="img-container">
+							<img class="shop-item-image" src="images/Tennis Racket1.jpg" height="413px">
+							<button class="btn btn-primary shop-item-button" type="button"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+					</div>
+					<div class="shop-item-details">
+						<h3 class="shop-item-title">TENNIS RACKET(LATEST) </h3>
+						<h4 class="shop-item-price">$29.99</h4>
+						
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		<section class="container content-section">
+			<div class="cart" id="id2">
+					<span class="close-cart">
+						<button class="cartButton" type="button" onclick="displayCart();"><i class="fas fa-window-close"></i></button>
+					</span>
+					<h2>your cart</h2>
+					<div class="cart-items">
+				
+					</div>
+					<div class="cart-footer">
+						<div class="cart-total">
+							<h3 class="cart-total-title">Total : <span class="cart-total-price">$0</span></h3>
+							
+						</div>
+						<button class="btn btn-primary btn-purchase" type="button">ORDER</button>
+					</div>
+			</div>
+			
+		</section>
+		
+		<footer class="main-footer">
+			<b><a href="CV1.html">ABOUT US</a></b>
+		</footer>
+	</body>
+</html>

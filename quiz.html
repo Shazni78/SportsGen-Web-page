@@ -1,0 +1,480 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Quiz</title>
+	<link rel="shortcut icon" href="Images/logo.png" type="image/png">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+		html{
+			font-family: "Helvetica", sans-serif;
+			background: url("Quiz/Images/bg.jpg") no-repeat center fixed;
+			background-size: cover;
+			color: #FFFFFF;
+		}
+		h1{
+			text-align: center;
+			font-family: Papyrus, sans-serif;
+			font-weight: bold;
+			margin-left: 20px;
+		}
+		#quizPage{
+			font-family: Arial, Helvetica, Times New Roman, Times, sans-serif;
+		}
+		#quiz{
+			display: none;
+			margin-left: 35px;
+			padding-bottom: 80px;
+		}
+		#timer{
+			background-color: #ff1493;
+			color: #FFFFFF;
+			border-radius : 12px;
+			width: 300px;
+		}
+		#submit{
+		}
+		.normaltxt, #startQuiz{
+			margin-left: 20px;
+		}
+
+		.footer{
+			position: fixed;
+			/* negative value of footer height */
+			clear: both;
+			z-index: auto;
+			left : 0;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			color: #FFFFFF;
+									text-align: center;
+			border-radius: 5px;
+		}
+
+		.footer p{
+			padding-top: 11px;
+		}
+
+		.footer a{
+			color: #FFFFFF;
+		}
+
+			</style>
+	
+</head>
+
+<body id="quizPage">
+
+<header>
+        <div class="logo">
+            <img src="image/logo.png" style="height:60px;" alt="logo">
+			SportsGen
+        </div>
+        <div class="moto">
+            <h1>NEVER LOSE YOUR TRACK</h1>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+
+    <div class="topnav">
+        <a href="Main Page.html">HOME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="NewStore.html">STORE</a>
+        <a href="GroupMemers.html">ABOUT US</a>
+        <a class="active" href="quiz.html">FAQ</a>
+		<a href="sitemap.html">SITE MAP</a>
+        <div class="search-box">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><img src="image/search.png" alt="search" style="height:15px;"></button>
+            </form>
+        </div>
+    </div>
+
+
+<h1>Quiz Competition</h1>
+<p class="normaltxt">This is a multiple choice quiz with 10 questions to answer within 2 minutes. Also note that you will be getting 2 marks for each correct answer and -1 for each wrong answer.</p>
+<div>
+<input type="button" value="Start Quiz" id="startQuiz" onClick="startQuiz();">
+</div>
+<form id="quiz">
+	<div id="timer"></div>
+
+	<div id="question-1">
+		<p class="questions">1. In which year did Maradona score a goal with his hand ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">1985</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">1987</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">1986</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">1988</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-2">
+		<p class="questions">2. Which cyclist was also called the cannibal ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Bernard Hinault</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Eddy Merckx</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Fausto Coppi</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Jacque Anquetil</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-3">
+		<p class="questions">3. How long is an Olympic swimming pool ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Forty Meters</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Sixty Meters</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Seventy Meters</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Fifty Meters</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-4">
+		<p class="questions">4. How many matches Mohammed Ali lose in his career ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Two</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Three</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q4" value="c" id="q4c"><label for="q4c">One</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q4" value="d" id="q4d"><label for="q4d">Five</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-5">
+		<p class="questions">5. Sachin Tendulkar hit his 100th international century against which among the following teams ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Sri Lanka</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Pakistan</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q5" value="c" id="q5c"><label for="q5c">South Africa</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Bangladesh</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-6">
+		<p class="questions">6. The world "Agricultural Shot"is known to be used sometimes in which among the following sports ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Hockey</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Golf</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q6" value="c" id="q6c"><label for="q6c">Cricket</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q6" value="d" id="q6d"><label for="q6d">Polo</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-7">
+		<p class="questions">7. Who among the following is the first Indian to score a century in Indian Premier League (IPL) ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q7" value="a" id="q7a"><label for="q7a">Gautam Gambhir</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q7" value="b" id="q7b"><label for="q7b">Mohamed Fazal</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q7" value="c" id="q7c"><label for="q7c">Manish Pandey</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q7" value="d" id="q7d"><label for="q7d">Rahul Dravid</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-8">
+		<p class="questions">8. "National Football Museum" which keeps FIFA collection is loacated in which country ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q8" value="a" id="q8a"><label for="q8a">Switzerland</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q8" value="b" id="q8b"><label for="q8b">Sri Lanka</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q8" value="c" id="q8c"><label for="q8c">England</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q8" value="d" id="q8d"><label for="q8d">France</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-9">
+		<p class="questions">9. Which team got eliminated in Cricket Worldcup 2019 from Semi Final ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q9" value="a" id="q9a"><label for="q9a">Pakistan</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q9" value="b" id="q9b"><label for="q9b">India</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q9" value="c" id="q9c"><label for="q9c">England</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q9" value="d" id="q9d"><label for="q9d">New Zeland</label>
+			</div>
+		</div>
+	</div>
+
+	<div id="question-10">
+		<p class="questions">10.Which Institute won the E-games in 2019 ?</p>
+		<div class="answers">
+			<div class="radio">
+				<input type="radio" name="q10" value="a" id="q10a"><label for="q10a">SLIT</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q10" value="b" id="q10b"><label for="q10b">APIT</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q10" value="c" id="q10c"><label for="q10c">NSBM</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="q10" value="d" id="q10d"><label for="q10d">IIT</label>
+			</div>
+		</div>
+	</div>
+<br>
+	<input type="button" name="submit" value="Submit" id="submit" onclick="submitForm();">
+</form>
+
+<script>
+    function startQuiz(){
+        "use strict";
+        var form = document.getElementById("quiz");
+        form.style.display = "block";
+        setTimeout("time();", 1000);
+    }
+
+    function submitForm() {
+        "use strict";
+        stopTimer();
+
+        var questionOneC = document.getElementById("q1c");
+
+        var questionTwoB = document.getElementById("q2b");
+
+        var questionThreeD = document.getElementById("q3d");
+
+        var questionFourC = document.getElementById("q4c");
+
+        var questionFiveD = document.getElementById("q5d");
+
+        var questionSixC = document.getElementById("q6c");
+
+        var questionSevenC = document.getElementById("q7c");
+
+        var questionEightC = document.getElementById("q8c");
+
+        var questionNineA = document.getElementById("q9a");
+
+        var questionTenD = document.getElementById("q10d");
+
+        var correct = "correct \n";
+
+        var incorrect = "incorrect \n";
+
+        var finalString1 = "Question 1 is ";
+        var finalString2 = "Question 2 is ";
+        var finalString3 = "Question 3 is ";
+        var finalString4 = "Question 4 is ";
+        var finalString5 = "Question 5 is ";
+        var finalString6 = "Question 6 is ";
+        var finalString7 = "Question 7 is ";
+        var finalString8 = "Question 8 is ";
+        var finalString9 = "Question 9 is ";
+        var finalString10 = "Question 10 is ";
+        var separatorString = "------------------------- \n";
+        var scoreDescription = "You scored ";
+        var correctCount = 0;
+        var incorrectCount = 0;
+
+        if(questionOneC.checked === true){
+            finalString1 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString1 += incorrect + separatorString;
+            incorrectCount++;
+        }
+        if(questionTwoB.checked === true){
+            finalString2 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString2 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionThreeD.checked === true){
+            finalString3 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString3 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionFourC.checked === true){
+            finalString4 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString4 += incorrect + separatorString;
+        }
+
+        if(questionFiveD.checked === true){
+            finalString5 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString5 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionSixC.checked === true){
+            finalString6 += correct + separatorString;
+            correctCount += 2;
+        } else {
+            finalString6 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionSevenC.checked === true){
+            finalString7 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString7 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionEightC.checked === true){
+            finalString8 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString8 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionNineA.checked === true){
+            finalString9 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString9 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        if(questionTenD.checked === true){
+            finalString10 += correct + separatorString;
+            correctCount += 2;
+        } else{
+            finalString10 += incorrect + separatorString;
+            incorrectCount++;
+        }
+
+        var marks = correctCount - incorrectCount;
+        scoreDescription += marks + " marks";
+
+        alert(scoreDescription);
+        alert(finalString1 + finalString2 + finalString3 + finalString4 +
+            finalString5 + finalString6 + finalString7 + finalString8 +
+            finalString8 + finalString9 + finalString10);
+
+        if(marks === 20){
+            document.body.style.backgroundColor = "#0092DA";//shade of blue (dark)
+        } else if(marks >= 15){
+            document.body.style.backgroundColor = "#00DAAC";//shade of blue (light - ocean blue)
+        } else if(marks >= 10){
+            document.body.style.backgroundColor = "#54F824";//shade of green
+        } else if(marks >= 5){
+            document.body.style.backgroundColor = "#FFFD9A";//shade of yellow
+        } else if(marks >= 0){
+            document.body.style.backgroundColor = "#FFAF9E";//shade of orange (peach)
+        } else{
+            document.body.style.backgroundColor = "#FF0716";//shade of red
+        }
+        resetForm();
+
+    }
+
+    function resetForm(){
+        "use strict";
+        document.getElementById("quiz").reset();
+    }
+
+    var total_seconds = 60 * 2;
+    var minutes = parseInt(total_seconds / 60);
+    var seconds = parseInt(total_seconds % 60);
+    var timeOut;
+
+    function time(){
+        "use strict";
+        document.getElementById("timer").innerHTML = '<p>&nbsp;Time Left : ' + minutes
+            + ' minutes and ' + seconds + ' seconds</p>';
+        if(total_seconds <= 0){
+            setTimeout("submitForm();", 1);
+        } else{
+            total_seconds -= 1;
+            minutes = parseInt(total_seconds / 60);
+            seconds = parseInt(total_seconds % 60);
+            timeOut = setTimeout("time();", 1000);
+        }
+    }
+
+
+    function stopTimer(){
+        "use strict";
+        var used_minutes = parseInt(timeOut / 60);
+        var used_seconds = parseInt(timeOut % 60);
+        document.getElementById("timer").innerHTML = "You completed the form in " + used_minutes + " minutes and " + used_seconds +" seconds.";
+        clearTimeout(timeOut);
+    }
+</script>
+<div class="footer">
+	<a href="myCV.html" style="color: white;">Click to view Shazni's CV</a>
+</div>
+</body>
+</html>

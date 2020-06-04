@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="fontawesome-free-5.9.0-web/css/all.css">
+		<script type="text/javascript">
+			function validateForm(){
+				var x = document.forms["myForm"]["fn"].value;
+				var y = document.forms["myForm"]["email"].value;
+				var z = document.forms["myForm"]["Add"].value;
+				var m = document.forms["myForm"]["NoC"].value;
+				var n = document.forms["myForm"]["num"].value;
+				if (x == "") {
+					alert("Please fill the necessary information for the order to be completed");
+					return false;
+				}
+				if (y == "") {
+					alert("Please fill the necessary information for the order to be completed");
+					return false;
+				}
+				if (z == "") {
+					alert("Please fill the necessary information for the order to be completed");
+					return false;
+				}
+				if (m == "") {
+					alert("Please fill the necessary information for the order to be completed");
+					return false;
+				}
+				if (n == "") {
+					alert("Please fill the necessary information for the order to be completed");
+					return false;
+				}
+			}
+		</script>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				font-family: "montserrat", sans-serif;
+				background: url("images/annie.jpg") center/cover no-repeat;
+
+
+			}	
+			.signup-form{
+				width: 300px;
+				padding: 20px;
+				text-align: center;
+				background: transparent;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				overflow: hidden;
+			}
+			.signup-form h1{
+				margin-top: 50px;
+				font-family: "montserrat", sans-serif;
+				text-transform: uppercase;
+				color: #000;
+				font-size: 40px;
+			}
+			.card{
+				color: #000;
+				font-family: "montserrat", sans-serif;
+			}
+			.signup-form input{
+				display: block;
+				width: 100%;
+				padding: 0 16px;
+				height: 44px;
+				text-align: center;
+				box-sizing: border-box;
+				outline: none;
+				border: none;
+				font-family: "montserrat", sans-serif;
+			}
+			.txtb{
+				margin: 20px 0;
+				background: rgba(255, 255, 255, .9);
+				border-radius: 6px;
+			}
+
+			.signup-btn{
+				margin-top: 60px;
+				margin-bottom: 20px;
+				background: #000;
+				color: #fff;
+				border-radius: 44px;
+				text-transform: uppercase;
+				cursor: pointer;
+				transition: 0.8s;
+			}
+			.signup-btn:hover{
+				transform: scale(0.96);
+			}
+			.card-btn:hover{
+				transform: scale(0.96);
+			}
+			
+			.card-btn{
+				background: transparent;
+				border: none;
+			}
+			.field{
+				border-color: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="signup-form">
+			<form class="" name="myForm" action="Main Page.html" method="post" onsubmit="return validateForm()">
+				<fieldset class="field">
+					<legend><h1>ORDER</h1></legend>
+					<input type="text" name="fn" placeholder="Full Name" class="txtb">
+					<input type="email" name="email" placeholder="Email" class="txtb">
+					<input type="text" name="Add" placeholder="Address" class="txtb">
+					<label class="card"><b>Accepted Card</b></label><br><br>
+					
+						<button class="card-btn" type="button"><i class="fab fa-cc-visa" style="color: black; font-size: 40px;"></i></button>
+						<button class="card-btn" type="button"><i class="fab fa-cc-amex" style="color: black; font-size: 40px;"></i></button>
+						<button class="card-btn" type="button"><i class="fab fa-cc-mastercard" style="color: black; font-size: 40px;"></i></button>
+						<button class="card-btn" type="button"><i class="fab fa-cc-discover" style="color: black; font-size: 40px;"></i></button>
+					
+					<input type="text" name="NoC" placeholder="Name on Card" class="txtb">
+					<input type="text" name="num" placeholder="Credit / Debit Card Number" class="txtb">
+					<!--<input type="password" name="fn" placeholder="Password" class="txtb">-->
+					<input type="submit" value="CHECKOUT" class="signup-btn">
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

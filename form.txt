@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">  <!-- declaring a language is important for accessibility-->
+<head>
+<title>Comment</title>
+<style>
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.grid-container > div {
+  text-align:center;
+  padding:30px;
+}
+
+.item3 {
+  grid-column-start:1;
+  grid-column-end:3;
+}
+</style>
+</head>
+<body>
+
+<form>
+<h1 style="text-align:center;"> Your feedback </h1>
+<hr>
+<p style="text-align:center;"> We would like your feedback to improve our website </p>
+<br>
+<div class="grid-container">
+  <div class="item1">
+    <label>First Name :</label>
+	<input type="text" name="firstname" value="First Name">
+  </div>
+  <div class="item2">
+    <label>Email :</label>
+	<input type="email" name="emailaddress" value="Email Address">
+  </div>
+  <div class="item3">
+    <label>Any comments :</label></p>
+    <textarea cols="100" rows="5"> </textarea>
+  </div>  
+</div>
+</form>
+
+</body>
+</html>

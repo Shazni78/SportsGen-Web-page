@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US"> <!-- declaring a language is important for accessibility-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- control the page's dimensions and scaling-->
+    <title>Main Page</title>
+    <link rel="stylesheet" href="css/style.css">
+	
+</head>
+
+<body class="main-content">
+
+    <header>
+        <div class="logo">
+            <img src="image/logo.png" style="height:60px;" alt="logo">
+			SportsGen
+        </div>
+        <div class="moto">
+            <h1>NEVER LOSE YOUR TRACK</h1>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+
+    <div class="topnav">
+        <a class="active" href="Main Page.html">HOME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="NewStore.html">STORE</a>
+        <a href="GroupMemers.html">ABOUT US</a>
+        <a href="quiz.html">FAQ</a>
+		<a href="sitemap.html">SITE MAP</a>
+        <div class="search-box">
+            <form>
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><img src="image/search.png" alt="search" style="height:15px;"></button>
+            </form>
+        </div>
+    </div>
+	
+		<div id="FonInDec" style="float:right; margin:0px;">
+		<button onclick="increaseFontSize();" value="">+</button>
+		<button onclick="decreaseFontSize();" value="">-</button>
+		</div>
+<div class="clearfix"></div>
+
+    <div class="grid-wrapper">
+        <div class="item1">
+            <h3>20% DISSCOUNT ON SELECTED ITEMS<br>OFFER ENDS IN</h3>
+            <a href="shop.html">SHOP NOW</a>
+            <p id="offer" style="color:red;"></p>
+        </div>
+        <div class="item2">
+            <h2 style="color:red;">Latest News</h2>
+		</div>
+        <div class="item3">
+            <h2 style="color:red;">TRENDING</h2>
+        </div>
+        <div class="item4">
+            <h3>Juan Mata: Paul Pogba 'brings everybody at Man Utd together'</h3>
+            <p>Manchester United midfielder Paul Pogba is a "positive influence" who "brings everyone together" at the club, says team-mate Juan Mata.</p>
+        <hr>
+		</div>
+		<div class="item5">
+            <iframe width="300" src="https://www.youtube.com/embed/GrsEAvRerTg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="item6">
+            <h3>MS Dhoni: Ex-India captain to serve with army regiment and miss West Indies tour</h3>
+            <p>Former India captain MS Dhoni will miss a tour of the West Indies - to join up with his army regiment instead.</p>
+        <hr>
+        </div>
+        <div class="item7">
+                <iframe width="300" src="https://www.youtube.com/embed/Kwu1yIC-ssg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="item8">
+                <h3>T20 Blast: Birmingham Bears, Kent Spitfires and Lancashire Lightning claim victories.</h3>
+				<p>Alex Blake and Fidel Edwards produced spectacular T20 Blast performances with bat and ball in stunning wins for Birmingham Bears and Kent Spitfires.</p>
+        <hr>
+		</div>
+        <div class="item9">
+                <iframe width="300" src="https://www.youtube.com/embed/zVTSAWXjJpI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="item10">
+                <h3>Gareth Bale: Real Madrid forward 'very close' to exit - Zinedine Zidane</h3>
+				<p>Real Madrid forward Gareth Bale is "very close to leaving" the Spanish club, says boss Zinedine Zidane.</p>
+        <hr>
+		</div>
+     </div>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Sep 30, 2019 15:37:25").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="offer"
+                document.getElementById("offer").innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("offer").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+			
+			
+			var min = 8;
+			var max = 38;
+			
+			function increaseFontSize(){
+				var p = document.getElementsByTagName('p');
+				for(i=0;i<p.length;i++){
+					if(p[i].style.fontSize){
+					var s = parseInt(p[i].style.fontSize.replace("px",""));
+					}
+					else{
+					var s = 12;
+					}
+					if(s!=max){
+					s+=1;
+					}
+					p[i].style.fontSize = s+"px";
+				}
+			}
+			function decreaseFontSize(){
+				var p = document.getElementsByTagName('p');
+				for(i=0;i<p.length;i++){
+					if(p[i].style.fontSize){
+					var s = parseInt(p[i].style.fontSize.replace("px",""));
+					}
+					else{
+					var s = 12;
+					}
+					if(s!=min){
+					s-=1;
+					}
+					p[i].style.fontSize = s+"px";
+				}
+			}
+        </script>
+		
+	<footer>
+        <h5><a href="Form.html">Comment Your Ideas</a> </h5>
+		<h5>About us :<a href="harith cv.html">Info</a> </h5>
+    </footer>
+	
+</body>
+
+</html>
